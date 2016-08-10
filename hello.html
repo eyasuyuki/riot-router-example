@@ -6,7 +6,41 @@
 
 <hello>
 
-  <h1>Hello Riot !</h1>
+  <h1 class="flipboard">Hello Riot !</h1>
+
+  <style>
+    @keyframes flipboard {
+		from {
+	    	transform: persipective(400px);
+		}
+
+		40% {
+			transform: perspective(400px) rotate3d(1, 0, 0, -10deg);
+		}
+
+		60% {
+			transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+		}
+
+		80% {
+			transform: perspective(400px) rotate3d(1, 0, 0, -40deg);
+		}
+
+		to {
+			transform: perspective(400px) rotate3d(1, 0, 0, -180deg); 
+		}
+    }
+
+    .flipboard {
+		transform-origin: right bottom;
+		animation-name: flipboard;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		backface-visibility: visible !important;
+    }
+
+
+  </style>
 
 </hello>
 
